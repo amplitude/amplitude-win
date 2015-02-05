@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="ExampleApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="EXAMPLE APP" VerticalAlignment="Top" Height="49" Width="118" Style="{StaticResource TitleTextBlockStyle}"/>
+        <Button Content="LogEvent" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Click="OnLogEventClick"/>
+
+    </Grid>
+</Page>
