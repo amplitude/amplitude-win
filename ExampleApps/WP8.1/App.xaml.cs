@@ -27,7 +27,6 @@ namespace ExampleApp
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-        public AmplitudeInstance amplitude;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -37,7 +36,7 @@ namespace ExampleApp
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            amplitude = new AmplitudeInstance(this, "a2dbce0e18dfe5f8e74493843ff5c053", "wp_user");
+            AmplitudeInstance amplitude = AmplitudeInstance.Initialize(this, "a2dbce0e18dfe5f8e74493843ff5c053");
             amplitude.SetUserProperties(new Dictionary<string, object>()
             {
                 {"int", 1},
