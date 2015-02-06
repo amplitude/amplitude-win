@@ -74,7 +74,12 @@ class DeviceInfo
 
     public string GetAdvertiserId()
     {
-        return null;
+        var advertiserId = Windows.System.UserProfile.AdvertisingManager.AdvertisingId;
+        if (string.IsNullOrEmpty(advertiserId))
+        {
+            return null;
+        }
+        return advertiserId;
     }
 
     public string GetPlatform()
