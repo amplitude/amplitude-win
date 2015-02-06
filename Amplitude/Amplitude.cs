@@ -30,7 +30,7 @@ namespace AmplitudeSDK
         private const int EVENT_UPLOAD_MAX_BATCH_SIZE = 100;
         private const int EVENT_MAX_COUNT = 1000;
         private const int EVENT_REMOVE_BATCH_SIZE = 20;
-        private const int EVENT_UPLOAD_PERIOD_MILLISECONDS = 5000; // 30s
+        private const int EVENT_UPLOAD_PERIOD_MILLISECONDS = 30000; // 30s
         private const long MIN_TIME_BETWEEN_SESSIONS_MILLIS = 15 * 1000; // 15s
         private const long SESSION_TIMEOUT_MILLIS = 30 * 60 * 1000; // 30m
         private const string SETTINGS_CONTAINER = "com.amplitude";
@@ -42,6 +42,7 @@ namespace AmplitudeSDK
         private const string START_SESSION_EVENT = "start_session";
         private const string END_SESSION_EVENT = "end_session";
         #endregion
+
         private static Amplitude instance;
 
         private string apiKey;
