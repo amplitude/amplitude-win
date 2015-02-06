@@ -37,7 +37,14 @@ namespace ExampleApp
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            amplitude = new AmplitudeInstance(this, "a2dbce0e18dfe5f8e74493843ff5c053");
+            amplitude = new AmplitudeInstance(this, "a2dbce0e18dfe5f8e74493843ff5c053", "wp_user");
+            amplitude.SetUserProperties(new Dictionary<string, object>()
+            {
+                {"int", 1},
+                {"string", "str"},
+                {"float", 1.1},
+                {"bool", true}
+            });
         }
 
         /// <summary>

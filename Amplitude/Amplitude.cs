@@ -466,6 +466,14 @@ namespace Amplitude
 
         private Dictionary<K, V> Merge<K, V>(Dictionary<K, V> a, Dictionary<K, V> b)
         {
+            if (a == null)
+            {
+                return b;
+            }
+            if (b == null)
+            {
+                return a;
+            }
             return b.Concat(a.Where(kvp => !b.ContainsKey(kvp.Key))).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
     }
