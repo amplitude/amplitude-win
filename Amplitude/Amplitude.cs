@@ -15,11 +15,11 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.Web.Http;
 
-namespace Amplitude
+namespace AmplitudeSDK
 {
     using InstanceArgs = Tuple<Application, string>;
 
-    public sealed class AmplitudeInstance
+    public sealed class Amplitude
     {
         #region constants
         private const string LIBRARY = @"amplitude-win";
@@ -42,7 +42,7 @@ namespace Amplitude
         private const string START_SESSION_EVENT = "start_session";
         private const string END_SESSION_EVENT = "end_session";
         #endregion
-        private static AmplitudeInstance instance;
+        private static Amplitude instance;
 
         private string apiKey;
         private string userId;
@@ -61,33 +61,33 @@ namespace Amplitude
         private TaskFactory logQueue;
         private Application application;
 
-        public static AmplitudeInstance Instance
+        public static Amplitude Instance
         {
             get {
                 return instance;
             }
         }
 
-        public static AmplitudeInstance Initialize(Application application, string apiKey)
+        public static Amplitude Initialize(Application application, string apiKey)
         {
             return Initialize(application, apiKey, null);
         }
 
-        public static AmplitudeInstance Initialize(Application application, string apiKey, string userId)
+        public static Amplitude Initialize(Application application, string apiKey, string userId)
         {
             if (instance == null)
             {
-                instance = new AmplitudeInstance(application, apiKey, userId);
+                instance = new Amplitude(application, apiKey, userId);
             }
             return instance;
         }
 
-        public AmplitudeInstance(Application application, string apiKey)
+        public Amplitude(Application application, string apiKey)
         {
             Init(application, apiKey, null);
         }
 
-        public AmplitudeInstance(Application application, string apiKey, string userId)
+        public Amplitude(Application application, string apiKey, string userId)
         {
             Init(application, apiKey, userId);
         }

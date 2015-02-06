@@ -9,7 +9,7 @@
     <ProjectGuid>{AA8F3851-A708-41CF-92FA-82B4ADB3EEC3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amplitude</RootNamespace>
+    <RootNamespace>AmplitudeSDK</RootNamespace>
     <AssemblyName>Amplitude</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>

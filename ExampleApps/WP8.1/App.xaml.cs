@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
-using Amplitude;
+using AmplitudeSDK;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -36,7 +36,7 @@ namespace ExampleApp
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            AmplitudeInstance amplitude = AmplitudeInstance.Initialize(this, "a2dbce0e18dfe5f8e74493843ff5c053");
+            Amplitude amplitude = Amplitude.Initialize(this, "a2dbce0e18dfe5f8e74493843ff5c053");
             amplitude.SetUserProperties(new Dictionary<string, object>()
             {
                 {"int", 1},

@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace Amplitude
+namespace AmplitudeSDK
 {
     class Event
     {

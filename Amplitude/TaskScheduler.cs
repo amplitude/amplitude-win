@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.System.Threading;
 
-namespace Amplitude
+namespace AmplitudeSDK
 {
     /// <summary>
     /// Provides a task scheduler that ensures a maximum concurrency level while  

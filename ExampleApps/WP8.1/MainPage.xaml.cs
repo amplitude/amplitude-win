@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Amplitude;
+using AmplitudeSDK;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -48,7 +48,7 @@ namespace ExampleApp
 
         private void OnLogEventClick(object sender, RoutedEventArgs e)
         {
-            AmplitudeInstance.Instance.LogEvent("WPEvent");
+            Amplitude.Instance.LogEvent("WPEvent");
         }
     }
 }
