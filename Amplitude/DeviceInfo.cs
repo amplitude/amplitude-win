@@ -1,4 +1,6 @@
 ﻿using System;
+using Windows.Networking.Connectivity;
+using Windows.Security.ExchangeActiveSyncProvisioning;
 
 class DeviceInfo
 {
@@ -10,7 +12,8 @@ class DeviceInfo
     {
         if (string.IsNullOrEmpty(_version))
         {
-            _version = Windows.ApplicationModel.Package.Current.Id.Version.ToString();
+            var version = Windows.ApplicationModel.Package.Current.Id.Version;
+            _version = version.Major + "." + version.Minor;
         }
         return _version;
     }
@@ -27,32 +30,46 @@ class DeviceInfo
 
     public string GetManufacturer()
     {
-        return "Manufacturer";
+        var deviceInfo = new EasClientDeviceInformation();
+        return deviceInfo.SystemManufacturer;
     }
 
     public string GetModel()
     {
-        return "Model";
+        var deviceInfo = new EasClientDeviceInformation();
+        return deviceInfo.SystemProductName;
     }
 
     public string GetBrand()
     {
-        return "Brand";
+        return null;
     }
 
     public string GetCarrier()
     {
-        return "Carrier";
+        var result = NetworkInformation.GetConnectionProfiles();
+        foreach (var connectionProfile in result)
+        {
+            if (connectionProfile.IsWwanConnectionProfile)
+            {
+                foreach (var networkName in connectionProfile.GetNetworkNames())
+                {
+                    return networkName;
+                }
+            }
+        }
+        return null;
     }
 
     public string GetCountry()
     {
-        return "Country";
+        return Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
     }
 
     public string GetLanguage()
     {
-        return "Language";
+        // For now, remove the region part of the BCP 47 tag
+        return Windows.System.UserProfile.GlobalizationPreferences.Languages[0].Split('-')[0];
     }
 
     public string GetAdvertiserId()

@@ -199,7 +199,8 @@ namespace Amplitude
                 evt.Add("version_name", deviceInfo.GetAppVersion());
                 evt.Add("os_name", deviceInfo.GetOsName());
                 evt.Add("os_version", deviceInfo.GetOsVersion());
-                evt.Add("device_brand", deviceInfo.GetBrand());
+                // no brand information
+                // evt.Add("device_brand", deviceInfo.GetBrand());
                 evt.Add("device_manufacturer", deviceInfo.GetManufacturer());
                 evt.Add("device_model", deviceInfo.GetModel());
                 evt.Add("carrier", deviceInfo.GetCarrier());
@@ -498,4 +499,3 @@ namespace Amplitude
         }
     }
 }
-
