@@ -23,7 +23,7 @@ namespace AmplitudeSDK
     {
         #region constants
         private const string LIBRARY = @"amplitude-win";
-        private const string VERSION = @"2.2.4";
+        private const string VERSION = @"0.1.0";
         private const string EVENT_LOG_URL = @"https://api.amplitude.com/";
         private const int API_VERSION = 2;
         private const int EVENT_UPLOAD_THRESHOLD = 30;
@@ -39,8 +39,8 @@ namespace AmplitudeSDK
         private const string SETTINGS_KEY_END_SESSION_EVENT_ID = "endSessionEventId";
         private const string SETTINGS_KEY_LAST_EVENT_TIME = "lastEventTime";
         private const string SETTINGS_KEY_PREVIOUS_SESSION_ID = "previousSessionId";
-        private const string START_SESSION_EVENT = "start_session";
-        private const string END_SESSION_EVENT = "end_session";
+        private const string START_SESSION_EVENT = "session_start";
+        private const string END_SESSION_EVENT = "session_end";
         #endregion
 
         private static Amplitude instance;
