@@ -1,3 +1,5 @@
+# THIS REPO IS ARCHIVED. AMPLITUDE NO LONGER SUPPORT WINDOWS APP SDK. #
+
 # Setup #
 1. If you haven't already, go to https://amplitude.com/signup and register for an account. Then, add an app. You will receive an API Key.
 
